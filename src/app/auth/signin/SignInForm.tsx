@@ -27,8 +27,10 @@ export default function SignInForm() {
         callbackUrl,
       });
 
+      console.log("[SIGNIN RESULT]", result);
+
       if (result?.error) {
-        setError("E-mail ou senha inválidos. Tente novamente.");
+        setError(`Erro: ${result.error} (status: ${result.status})`);
       } else if (result?.ok) {
         window.location.href = callbackUrl;
       }
