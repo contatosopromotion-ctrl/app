@@ -30,8 +30,7 @@ export default function SignInForm() {
       if (result?.error) {
         setError("E-mail ou senha inválidos. Tente novamente.");
       } else if (result?.ok) {
-        router.push(callbackUrl);
-        router.refresh();
+        window.location.href = callbackUrl;
       }
     } catch {
       setError("Ocorreu um erro. Tente novamente.");
