@@ -1,10 +1,11 @@
-"use client";
-
-import { Inter } from "next/font/google";
-import { SessionProvider } from "next-auth/react";
+import type { Metadata } from "next";
+import { SessionProvider } from "@/components/providers/SessionProvider";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+export const metadata: Metadata = {
+  title: "InfluencerHub",
+  description: "Plataforma de gestão de influenciadores",
+};
 
 export default function RootLayout({
   children,
@@ -13,11 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <head>
-        <title>Influencer Dashboard</title>
-        <meta name="description" content="Plataforma de gestão de influenciadores" />
-      </head>
-      <body className={inter.className}>
+      <body className="antialiased">
         <SessionProvider>{children}</SessionProvider>
       </body>
     </html>
