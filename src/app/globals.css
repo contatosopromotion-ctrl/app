@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6;
+  }
+
+  .data-table {
+    @apply w-full text-sm text-left text-gray-700;
+  }
+
+  .data-table th {
+    @apply px-4 py-3 bg-gray-50 font-semibold text-gray-600 uppercase tracking-wider text-xs border-b border-gray-200;
+  }
+
+  .data-table td {
+    @apply px-4 py-3 border-b border-gray-100;
+  }
+
+  .data-table tr:hover td {
+    @apply bg-gray-50;
+  }
+}
